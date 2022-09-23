@@ -6,6 +6,8 @@ import Books from '../screens/Books'
 import Favoritos from '../screens/Favoritos'
 import AudioBooks from '../screens/AudioBooks'
 
+import StackRouter from './StackRouter'
+
 import { Entypo, Feather, AntDesign, FontAwesome } from '@expo/vector-icons'
 
 const Tab = createBottomTabNavigator()
@@ -22,7 +24,7 @@ export default function TabRouter() {
     >
       <Tab.Screen
         name="Home"
-        component={Home}
+        component={StackRouter}
         options={{
           tabBarIcon: ({ color }) => (
             <Entypo name="home" size={24} color={color} />

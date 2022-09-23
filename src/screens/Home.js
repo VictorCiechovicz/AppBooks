@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Feather } from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/native'
 import axios from 'axios'
-
-import film1 from '../../assets/it.jfif'
-import film2 from '../../assets/cach.jfif'
-import film3 from '../../assets/frank.jfif'
-
+import ImagePerfil from '../../assets/perfil.png'
 import {
   VStack,
   HStack,
@@ -13,16 +9,19 @@ import {
   Image,
   Input,
   FlatList,
-  SectionList,
+  ScrollView,
   Box
 } from 'native-base'
 import { TouchableOpacity } from 'react-native'
+import { Feather } from '@expo/vector-icons'
 
-import ImagePerfil from '../../assets/perfil.png'
+import CardCategoria from '../components/CardCategoria'
+import CardBook from '../components/CardBook'
 
 export default function Home() {
+  const navigation = useNavigation()
   const [maisLidos, setMaisLidos] = useState([])
-
+  // função abaixo busca na api
   useEffect(() => {
     const fechtBooks = async () => {
       const res = await axios.get(
@@ -34,75 +33,116 @@ export default function Home() {
   }, [])
 
   return (
-    <VStack flex={1} justifyContent="flex-start" alignItems="center">
-      <HStack
-        flex={1}
-        alignItems="flex-start"
-        justifyContent="center"
-        mt="50px"
-      >
-        <Text
-          fontSize="24px"
-          fontWeight="bold"
-          marginRight="194px"
-          marginLeft="23px"
+    <VStack flex={1}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <HStack
+          alignItems="flex-start"
+          justifyContent="center"
+          mt="50px"
+          mb="28px"
         >
-          Bookshelf
-        </Text>
-        <Image source={ImagePerfil} w="30px" h="30px" alt="Perfil" />
-      </HStack>
-      <HStack flex={1} alignItems="flex-start" justifyContent="center">
-        <Input
-          placeholder="Qual livro você gostaria de ler?"
-          w="343px"
-          h="56px"
-          fontSize="14px"
-          borderRadius="4px"
-          InputRightElement={
-            <Feather name="search" size={20} color="#828282" />
-          }
-        />
-      </HStack>
-      <HStack
-        flex={1}
-        justifyContent="center"
-        alignItems="flex-start"
-        ml="16px"
-      >
-        <Text fontSize="18px" fontWeight="bold">
+          <Text fontSize="24px" fontWeight="bold" marginRight="194px">
+            Bookshelf
+          </Text>
+          <Image source={ImagePerfil} w="30px" h="30px" alt="Perfil" />
+        </HStack>
+        <HStack mb="28px" justifyContent="center">
+          <Input
+            placeholder="Qual livro você gostaria de ler?"
+            w="343px"
+            h="56px"
+            fontSize="14px"
+            borderRadius="4px"
+            InputRightElement={
+              <Feather name="search" size={20} color="#828282" />
+            }
+          />
+        </HStack>
+        <Text fontSize="18px" fontWeight="bold" ml="16px" mb="16px">
           Para você
         </Text>
-        <FlatList />
-      </HStack>
 
-      <HStack
-        flex={1}
-        justifyContent="center"
-        alignItems="flex-start"
-        ml="16px"
-      >
-        <Text fontSize="18px" fontWeight="bold">
+        <HStack mx="16px">
+          <ScrollView horizontal={true} showsVerticalScrollIndicator={false}>
+            <VStack mr="16px" mb="32px">
+              <CardBook
+                title="IT A Coisa"
+                autor="Andy Muschietti"
+                pressione={'BookDetail'}
+              />
+            </VStack>
+
+            <VStack mr="16px">
+              <CardBook title="IT A Coisa" autor="Andy Muschietti" />
+            </VStack>
+
+            <VStack mr="16px" mb="32px">
+              <CardBook title="IT A Coisa" autor="Andy Muschietti" />
+            </VStack>
+            <VStack mr="16px" mb="32px">
+              <CardBook title="IT A Coisa" autor="Andy Muschietti" />
+            </VStack>
+          </ScrollView>
+        </HStack>
+
+        <Text fontSize="18px" fontWeight="bold" ml="16px" mb="16px">
           Categorias
         </Text>
+        <HStack
+          justifyContent="center"
+          alignItems="flex-start"
+          ml="16px"
+          mb="32px"
+        >
+          <ScrollView horizontal={true} showsVerticalScrollIndicator={false}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('BiografiaCategoria')}
+            >
+              <CardCategoria title="Biografia" color="#F2994A" />
+            </TouchableOpacity>
 
-        <FlatList />
-      </HStack>
-      <HStack
-        flex={1}
-        justifyContent="center"
-        alignItems="flex-start"
-        ml="16px"
-      >
-        <Text fontSize="18px" fontWeight="bold">
+            <TouchableOpacity
+              onPress={() => navigation.navigate('TecnologiaCategoria')}
+            >
+              <CardCategoria title="Tecnologia" color="#219653" />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() => navigation.navigate('FiccaoCategoria')}
+            >
+              <CardCategoria title="Ficção" color="#9B51E0" />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+              onPress={() => navigation.navigate('PoliticaCategoria')}
+            >
+              <CardCategoria title="Política" color="#4F4F4F" />
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('AutoajudaCategoria')}
+            >
+              <CardCategoria title="Autoajuda" color="#56CCF2" />
+            </TouchableOpacity>
+          </ScrollView>
+        </HStack>
+
+        <Text ml="16px" mb="16px" fontSize="18px" fontWeight="bold">
           Os mais lidos da semana
         </Text>
-        <Box>
-          <Image sorce={film1} w="104px" h="160px" borderRadius="4px" />
-          <Text></Text>
-          <Text></Text>
-          <HStack></HStack>
-        </Box>
-      </HStack>
+        <HStack ml="16px">
+          <ScrollView horizontal={true} showsVerticalScrollIndicator={false}>
+            <VStack mr="16px" mb="32px">
+              <CardBook title="IT A Coisa" autor="Andy Muschietti" />
+            </VStack>
+            <VStack mr="16px" mb="32px">
+              <CardBook title="IT A Coisa" autor="Andy Muschietti" />
+            </VStack>
+            <VStack mr="16px" mb="32px">
+              <CardBook title="IT A Coisa" autor="Andy Muschietti" />
+            </VStack>
+          </ScrollView>
+        </HStack>
+      </ScrollView>
     </VStack>
   )
 }
