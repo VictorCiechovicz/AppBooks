@@ -15,7 +15,7 @@ export default function BiografiaCategoria() {
         justifyContent="flex-start"
         alignItems="center"
         mb="36px"
-        mt="12px"
+        mt="30px"
       >
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <AntDesign name="arrowleft" size={24} color="black" />

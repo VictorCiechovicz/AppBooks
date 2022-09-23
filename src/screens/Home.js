@@ -63,13 +63,13 @@ export default function Home() {
         </Text>
 
         <HStack mx="16px">
-          <ScrollView horizontal={true} showsVerticalScrollIndicator={false}>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <VStack mr="16px" mb="32px">
-              <CardBook
-                title="IT A Coisa"
-                autor="Andy Muschietti"
-                pressione={'BookDetail'}
-              />
+              <TouchableOpacity
+                onPress={() => navigation.navigate('BookDetail')}
+              >
+                <CardBook title="IT A Coisa" autor="Andy Muschietti" />
+              </TouchableOpacity>
             </VStack>
 
             <VStack mr="16px">
@@ -94,7 +94,7 @@ export default function Home() {
           ml="16px"
           mb="32px"
         >
-          <ScrollView horizontal={true} showsVerticalScrollIndicator={false}>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <TouchableOpacity
               onPress={() => navigation.navigate('BiografiaCategoria')}
             >
@@ -130,7 +130,7 @@ export default function Home() {
           Os mais lidos da semana
         </Text>
         <HStack ml="16px">
-          <ScrollView horizontal={true} showsVerticalScrollIndicator={false}>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
             <VStack mr="16px" mb="32px">
               <CardBook title="IT A Coisa" autor="Andy Muschietti" />
             </VStack>

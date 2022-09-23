@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { VStack, Text, HStack, Image } from 'native-base'
-import { TouchableOpacity } from 'react-native'
-import { Entypo } from '@expo/vector-icons'
-
+import { TouchableOpacity, Pressable } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import { Entypo } from '@expo/vector-icons'
 
 import film1 from '../../assets/it.png'
 
@@ -20,60 +19,58 @@ export default function CardBook(props) {
   }
   return (
     <VStack>
-      <TouchableOpacity onPress={() => navigation.navigate(props.pressione)}>
-        <VStack mr="16px" mb="5px">
-          <Image
-            source={film1}
-            w="104px"
-            h="160px"
-            borderRadius="4px"
-            alt="Livro"
-          />
-          <Text fontSize="14px" fontWeight="700">
-            {props.title}
-          </Text>
-          <Text fontSize="12px" fontWeight="400">
-            {props.autor}
-          </Text>
-        </VStack>
-      </TouchableOpacity>
+      <VStack mr="16px" mb="5px">
+        <Image
+          source={film1}
+          w="104px"
+          h="160px"
+          borderRadius="4px"
+          alt="Livro"
+        />
+        <Text fontSize="14px" fontWeight="700">
+          {props.title}
+        </Text>
+        <Text fontSize="12px" fontWeight="400">
+          {props.autor}
+        </Text>
+      </VStack>
 
       <HStack>
-        <TouchableOpacity onPress={startSelected}>
+        <Pressable onPress={startSelected}>
           <Entypo
             name="star"
             size={12}
             color={selectedStar === true ? '#673403' : '#BDBDBD'}
           />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={startSelected}>
+        </Pressable>
+        <Pressable onPress={startSelected}>
           <Entypo
             name="star"
             size={12}
             color={selectedStar === true ? '#673403' : '#BDBDBD'}
           />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={startSelected}>
+        </Pressable>
+        <Pressable onPress={startSelected}>
           <Entypo
             name="star"
             size={12}
             color={selectedStar === true ? '#673403' : '#BDBDBD'}
           />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={startSelected}>
+        </Pressable>
+        <Pressable onPress={startSelected}>
           <Entypo
             name="star"
             size={12}
             color={selectedStar === true ? '#673403' : '#BDBDBD'}
           />
-        </TouchableOpacity>
-        <TouchableOpacity onPress={startSelected}>
+        </Pressable>
+        <Pressable onPress={startSelected}>
           <Entypo
             name="star"
             size={12}
             color={selectedStar === true ? '#673403' : '#BDBDBD'}
           />
-        </TouchableOpacity>
+        </Pressable>
       </HStack>
     </VStack>
   )

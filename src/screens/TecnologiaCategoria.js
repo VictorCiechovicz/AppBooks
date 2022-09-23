@@ -15,14 +15,14 @@ export default function TecnologiaCategoria() {
         justifyContent="flex-start"
         alignItems="center"
         mb="36px"
-        mt="12px"
+        mt="30px"
       >
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <AntDesign name="arrowleft" size={24} color="black" />
         </TouchableOpacity>
 
         <Text ml="21px" fontSize="24px" fontWeight="900">
-          Tecnología
+          Tecnologia
         </Text>
       </HStack>
       <HStack mb="24px">
