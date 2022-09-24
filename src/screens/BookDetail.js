@@ -41,7 +41,7 @@ export default function BookDetail() {
         </TouchableOpacity>
 
         <HStack>
-          <TouchableOpacity style={{ marginRight: '10px' }}>
+          <TouchableOpacity style={{ marginRight: 10 }}>
             <Ionicons name="heart-outline" size={24} color="black" />
           </TouchableOpacity>
 
@@ -53,7 +53,13 @@ export default function BookDetail() {
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <HStack mb="32px">
-          <Image source={imageBook} w="164px" h="253px" borderRadius="4px" />
+          <Image
+            source={imageBook}
+            w="164px"
+            h="253px"
+            borderRadius="4px"
+            alt="Livro"
+          />
 
           <VStack mx="16px">
             <Text mb="8px" fontSize="16px" fontWeight="700">
@@ -102,7 +108,6 @@ export default function BookDetail() {
               </TouchableOpacity>
 
               <Text fontSize="14px" ml="8px" fontWeight="400">
-                {' '}
                 36 Avaliações
               </Text>
             </HStack>
@@ -141,7 +146,6 @@ export default function BookDetail() {
 
         <VStack>
           <Text mb="16px" fontSize="18px" fontWeight="900">
-            {' '}
             Sobre esse livro
           </Text>
 

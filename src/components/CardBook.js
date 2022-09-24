@@ -21,7 +21,7 @@ export default function CardBook(props) {
     <VStack>
       <VStack mr="16px" mb="5px">
         <Image
-          source={film1}
+        source={{uri:props.image}}
           w="104px"
           h="160px"
           borderRadius="4px"

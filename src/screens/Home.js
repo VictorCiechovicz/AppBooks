@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigation } from '@react-navigation/native'
-import axios from 'axios'
+
 import ImagePerfil from '../../assets/perfil.png'
 import {
   VStack,
@@ -9,8 +9,7 @@ import {
   Image,
   Input,
   FlatList,
-  ScrollView,
-  Box
+  ScrollView
 } from 'native-base'
 import { TouchableOpacity } from 'react-native'
 import { Feather } from '@expo/vector-icons'
@@ -18,18 +17,17 @@ import { Feather } from '@expo/vector-icons'
 import CardCategoria from '../components/CardCategoria'
 import CardBook from '../components/CardBook'
 
+import BuscaLivrosMaisLidosSemana from '../services/BuscaLivrosMaisLidosSemana'
+
 export default function Home() {
   const navigation = useNavigation()
   const [maisLidos, setMaisLidos] = useState([])
+
   // função abaixo busca na api
-  useEffect(() => {
-    const fechtBooks = async () => {
-      const res = await axios.get(
-        `  https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=DdUDH1G8SAU50EnsxKSq3Fr30n4J0Kn7`
-      )
-      setMaisLidos(res.data.results.books)
-    }
-    fechtBooks()
+  useEffect(async () => {
+    const resultado = await BuscaLivrosMaisLidosSemana()
+    setMaisLidos(resultado)
+    console.log(resultado)
   }, [])
 
   return (
@@ -54,7 +52,9 @@ export default function Home() {
             fontSize="14px"
             borderRadius="4px"
             InputRightElement={
-              <Feather name="search" size={20} color="#828282" />
+              <TouchableOpacity>
+                <Feather name="search" size={20} color="#828282" />
+              </TouchableOpacity>
             }
           />
         </HStack>
@@ -64,24 +64,21 @@ export default function Home() {
 
         <HStack mx="16px">
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <VStack mr="16px" mb="32px">
-              <TouchableOpacity
-                onPress={() => navigation.navigate('BookDetail')}
-              >
-                <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-              </TouchableOpacity>
-            </VStack>
-
-            <VStack mr="16px">
-              <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-            </VStack>
-
-            <VStack mr="16px" mb="32px">
-              <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-            </VStack>
-            <VStack mr="16px" mb="32px">
-              <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-            </VStack>
+            <FlatList
+              data={maisLidos}
+              keyExtractor={item => item.rank}
+              renderItem={({ item }) => (
+                <TouchableOpacity
+                  onPress={(() => navigation.navigate('BookDetail'), { item })}
+                >
+                  <CardBook
+                    image={item.book_image}
+                    title={item.title}
+                    autor={item.author}
+                  />
+                </TouchableOpacity>
+              )}
+            />
           </ScrollView>
         </HStack>
 
