@@ -27,7 +27,7 @@ You have two branchs. The master you have project base with layout design only. 
 Clone this project and start with Expo:
 
 `
-  git clone branch_url
+  `git clone branch_url`
   cd expensesapp
   npm install
   expo start
