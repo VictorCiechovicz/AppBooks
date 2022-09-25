@@ -5,7 +5,7 @@
 
 # ****💻 AppBooks****
 
-App to Consome BooksAPI from New York Times. This application was created for the purpose of studies.
+App to Consome Books API from New York Times. This application was created for the purpose of studies.
 
 ## ****✨ Stack****
 
