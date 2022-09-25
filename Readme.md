@@ -1,5 +1,6 @@
 
-![developed by Victor Ciechovicz](https://user-images.githubusercontent.com/106246945/192158496-270d9392-fd31-41a1-af55-a487ba3e6f0c.png)
+
+![developed by Victor Ciechovicz (1)](https://user-images.githubusercontent.com/106246945/192158561-4bfce5be-4a90-4b3f-8943-7215953374ec.png)
 
 
 # ****💻 AppBooks****
