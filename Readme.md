@@ -1,3 +1,7 @@
+
+![developed by Victor Ciechovicz](https://user-images.githubusercontent.com/106246945/192158496-270d9392-fd31-41a1-af55-a487ba3e6f0c.png)
+
+
 # ****💻 AppBooks****
 
 App to Consome BooksAPI from New York Times. This application was created for the purpose of studies.
@@ -26,13 +30,12 @@ You have two branchs. The master you have project base with layout design only. 
 
 Clone this project and start with Expo:
 
-`
- `git clone branch_url {''}
+```jsx
+  git clone branch_url
   cd expensesapp
   npm install
   expo start
-`
-
+```
 ## ****📄 Feedback****
 
 Would you like to speak with me? I find myself on Linkedin: [https://www.linkedin.com/in/victor-avila-ciechovicz-55a172106/](https://www.linkedin.com/in/victor-avila-ciechovicz-55a172106/)
