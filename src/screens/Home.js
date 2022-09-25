@@ -18,17 +18,24 @@ import CardCategoria from '../components/CardCategoria'
 import CardBook from '../components/CardBook'
 
 import BuscaLivrosMaisLidosSemana from '../services/BuscaLivrosMaisLidosSemana'
+import { Loading } from '../components/Loading'
 
 export default function Home() {
+ 
   const navigation = useNavigation()
+  const [isLoading, setIsLoading] = useState(true)
   const [maisLidos, setMaisLidos] = useState([])
 
   // função abaixo busca na api
   useEffect(async () => {
     const resultado = await BuscaLivrosMaisLidosSemana()
-    setMaisLidos(resultado)
-    console.log(resultado)
+
+    setMaisLidos(resultado.results)
+    setIsLoading(false)
+    //console.log(resultado.results['lists'][8])
   }, [])
+
+  console.log(maisLidos)
 
   return (
     <VStack flex={1}>
@@ -63,23 +70,23 @@ export default function Home() {
         </Text>
 
         <HStack mx="16px">
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+          {isLoading ? (
+            <Loading />
+          ) : (
             <FlatList
-              data={maisLidos}
-              keyExtractor={item => item.rank}
+              showsHorizontalScrollIndicator={false}
+              horizontal={true}
+              data={maisLidos['lists'][8]['books']}
+              keyExtractor={maisLidos => maisLidos.rank}
               renderItem={({ item }) => (
-                <TouchableOpacity
-                  onPress={(() => navigation.navigate('BookDetail'), { item })}
-                >
-                  <CardBook
-                    image={item.book_image}
-                    title={item.title}
-                    autor={item.author}
-                  />
-                </TouchableOpacity>
+                <CardBook
+                  image={item.book_image}
+                  title={item.title}
+                  autor={item.author}
+                />
               )}
             />
-          </ScrollView>
+          )}
         </HStack>
 
         <Text fontSize="18px" fontWeight="bold" ml="16px" mb="16px">
@@ -127,17 +134,23 @@ export default function Home() {
           Os mais lidos da semana
         </Text>
         <HStack ml="16px">
-          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <VStack mr="16px" mb="32px">
-              <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-            </VStack>
-            <VStack mr="16px" mb="32px">
-              <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-            </VStack>
-            <VStack mr="16px" mb="32px">
-              <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-            </VStack>
-          </ScrollView>
+        {isLoading ? (
+            <Loading />
+          ) : (
+            <FlatList
+              showsHorizontalScrollIndicator={false}
+              horizontal={true}
+              data={maisLidos['lists'][8]['books']}
+              keyExtractor={maisLidos => maisLidos.rank}
+              renderItem={({ item }) => (
+                <CardBook
+                  image={item.book_image}
+                  title={item.title}
+                  autor={item.author}
+                />
+              )}
+            />
+          )}
         </HStack>
       </ScrollView>
     </VStack>

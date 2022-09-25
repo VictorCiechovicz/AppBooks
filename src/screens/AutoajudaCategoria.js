@@ -25,16 +25,8 @@ export default function AutoajudaCategoria() {
           Autoajuda
         </Text>
       </HStack>
-      <HStack mb="24px">
-        <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-        <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-        <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-      </HStack>
-      <HStack>
-        <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-        <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-        <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-      </HStack>
+      <HStack mb="24px"></HStack>
+      <HStack></HStack>
     </VStack>
   )
 }

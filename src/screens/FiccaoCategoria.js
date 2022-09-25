@@ -1,14 +1,15 @@
-import React from 'react'
-import { VStack, HStack, Text } from 'native-base'
+import React, { useState, useEffect } from 'react'
+import { VStack, HStack, Text, FlatList, Image } from 'native-base'
 import { TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { AntDesign } from '@expo/vector-icons'
 
-import CardBook from '../components/CardBook'
+
+
+
 
 export default function FiccaoCategoria() {
   const navigation = useNavigation()
-
   return (
     <VStack flex={1} mx="16px">
       <HStack
@@ -25,16 +26,9 @@ export default function FiccaoCategoria() {
           Ficção
         </Text>
       </HStack>
-      <HStack mb="24px">
-        <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-        <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-        <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-      </HStack>
-      <HStack>
-        <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-        <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-        <CardBook title="IT A Coisa" autor="Andy Muschietti" />
-      </HStack>
+      <VStack alignItems="center">
+   
+      </VStack>
     </VStack>
   )
 }

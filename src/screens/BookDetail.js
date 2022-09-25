@@ -14,7 +14,7 @@ import { useNavigation } from '@react-navigation/native'
 
 import { TouchableOpacity } from 'react-native'
 
-import imageBook from '../../assets/it.png'
+
 
 export default function BookDetail() {
   const navigation = useNavigation()
@@ -54,7 +54,7 @@ export default function BookDetail() {
       <ScrollView showsVerticalScrollIndicator={false}>
         <HStack mb="32px">
           <Image
-            source={imageBook}
+            source={{uri:'https://storage.googleapis.com/du-prd/books/images/9781534465886.jpg'}}
             w="164px"
             h="253px"
             borderRadius="4px"
