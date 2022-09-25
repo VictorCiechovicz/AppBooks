@@ -21,7 +21,6 @@ import BuscaLivrosMaisLidosSemana from '../services/BuscaLivrosMaisLidosSemana'
 import { Loading } from '../components/Loading'
 
 export default function Home() {
- 
   const navigation = useNavigation()
   const [isLoading, setIsLoading] = useState(true)
   const [maisLidos, setMaisLidos] = useState([])
@@ -134,7 +133,7 @@ export default function Home() {
           Os mais lidos da semana
         </Text>
         <HStack ml="16px">
-        {isLoading ? (
+          {isLoading ? (
             <Loading />
           ) : (
             <FlatList

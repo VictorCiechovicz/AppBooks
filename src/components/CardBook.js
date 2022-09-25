@@ -17,26 +17,27 @@ export default function CardBook(props) {
   }
   return (
     <VStack mb="32px">
-      <VStack mr="16px" mb="5px">
-        <Image
-          source={{ uri: props.image }}
-          w="104px"
-          h="160px"
-          borderRadius="4px"
-          alt="Livro"
-        />
-        <HStack w="104px" h="100px">
-          <Text fontSize="14px" fontWeight="700" l>
-            {props.title}
-          </Text>
-        </HStack>
-        <HStack w="104px" h="20px">
-          <Text fontSize="12px" fontWeight="400">
-            {props.autor}
-          </Text>
-        </HStack>
-      </VStack>
-
+      <TouchableOpacity onPress={navigation.navigate('BookDetail')}>
+        <VStack mr="16px" mb="5px">
+          <Image
+            source={{ uri: props.image }}
+            w="104px"
+            h="160px"
+            borderRadius="4px"
+            alt="Livro"
+          />
+          <HStack w="104px" h="100px">
+            <Text fontSize="14px" fontWeight="700" l>
+              {props.title}
+            </Text>
+          </HStack>
+          <HStack w="104px" h="20px">
+            <Text fontSize="12px" fontWeight="400">
+              {props.autor}
+            </Text>
+          </HStack>
+        </VStack>
+      </TouchableOpacity>
       <HStack>
         <Pressable onPress={startSelected}>
           <Entypo

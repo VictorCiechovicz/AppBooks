@@ -14,8 +14,6 @@ import { useNavigation } from '@react-navigation/native'
 
 import { TouchableOpacity } from 'react-native'
 
-
-
 export default function BookDetail() {
   const navigation = useNavigation()
   const [selectedStar, setSelectedStar] = useState(false)
@@ -54,7 +52,9 @@ export default function BookDetail() {
       <ScrollView showsVerticalScrollIndicator={false}>
         <HStack mb="32px">
           <Image
-            source={{uri:'https://storage.googleapis.com/du-prd/books/images/9781534465886.jpg'}}
+            source={{
+              uri: 'https://storage.googleapis.com/du-prd/books/images/9781534465886.jpg'
+            }}
             w="164px"
             h="253px"
             borderRadius="4px"
@@ -63,11 +63,11 @@ export default function BookDetail() {
 
           <VStack mx="16px">
             <Text mb="8px" fontSize="16px" fontWeight="700">
-              titulo do Livro
+              Creepy Crayon!
             </Text>
 
             <Text fontSize="14px" fontWeight="400" mb="16px">
-              autor
+              Aaron Reynolds
             </Text>
 
             <HStack alignItems="center" mb="17px">
@@ -122,7 +122,7 @@ export default function BookDetail() {
                 justifyContent="center"
               >
                 <Text fontSize="14px" fontWeight="400">
-                  tipo de livro
+                  Ficção
                 </Text>
               </Box>
             </HStack>
@@ -137,7 +137,7 @@ export default function BookDetail() {
                 justifyContent="center"
               >
                 <Text fontSize="14px" fontWeight="400">
-                  tipo de leitura
+                  Leitura
                 </Text>
               </Box>
             </HStack>
