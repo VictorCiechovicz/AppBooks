@@ -31,7 +31,7 @@ Clone this project and start with Expo:
   cd expensesapp
   npm install
   expo start
-
+`
 
 ## ****📄 Feedback****
 
