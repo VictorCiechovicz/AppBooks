@@ -19,11 +19,11 @@ App to Consome Books API from New York Times. This application was created for t
 
 ## **🛠️ Features**
 
-- [ ]  Consume de Api disponibilizada pelo New York Times api.nytimes.com
+- [ ]  Consome de Api disponibilizada pelo New York Times api.nytimes.com
 - [ ]  Listagem dos livros mais lidos 
 - [ ]  Navegação Tab e Stack
-- [ ]  Utilização do Axios para chamada da API
-- [ ]  Estilização feita com componentes nativos e componentes do Native Base para layout
+- [ ]  Utilização do Axios para tratamento das requisições a API
+- [ ]  Estilização feita com componentes nativos e componentes da Lib Native Base para layout
 
 ## 🔧 ****Running****
 
