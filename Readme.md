@@ -5,7 +5,7 @@
 
 # ****💻 AppBooks****
 
-App to Consome Books API from New York Times. This application was created for the purpose of studies.
+App to Consume Books API from New York Times. This application was created for the purpose of studies.
 
 ## ****✨ Stack****
 
@@ -19,7 +19,7 @@ App to Consome Books API from New York Times. This application was created for t
 
 ## **🛠️ Features**
 
-- [ ]  Consome de Api disponibilizada pelo New York Times api.nytimes.com
+- [ ]  Consumo de Api disponibilizada pelo New York Times api.nytimes.com
 - [ ]  Listagem dos livros mais lidos 
 - [ ]  Navegação Tab e Stack
 - [ ]  Utilização do Axios para tratamento das requisições a API
