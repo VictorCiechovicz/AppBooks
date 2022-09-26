@@ -27,12 +27,12 @@ App to Consome Books API from New York Times. This application was created for t
 
 ## 🔧 ****Running****
 
-You have two branchs. The master you have project base with layout design only. And, the done you have the project finished with charts implemented.
+You have one branchs. The main you have project base with layout design only and project finished with charts implemented.
 
 Clone this project and start with Expo:
 
 ```jsx
-  git clone branch_url
+  git clone 
   cd expensesapp
   npm install
   expo start
