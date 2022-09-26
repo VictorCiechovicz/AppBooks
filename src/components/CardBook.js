@@ -17,7 +17,7 @@ export default function CardBook(props) {
   }
   return (
     <VStack mb="32px">
-      <TouchableOpacity onPress={navigation.navigate('BookDetail')}>
+    
         <VStack mr="16px" mb="5px">
           <Image
             source={{ uri: props.image }}
@@ -37,7 +37,7 @@ export default function CardBook(props) {
             </Text>
           </HStack>
         </VStack>
-      </TouchableOpacity>
+    
       <HStack>
         <Pressable onPress={startSelected}>
           <Entypo

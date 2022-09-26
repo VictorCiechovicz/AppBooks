@@ -29,9 +29,8 @@ export default function Home() {
   useEffect(async () => {
     const resultado = await BuscaLivrosMaisLidosSemana()
 
-    setMaisLidos(resultado.results)
+    setMaisLidos(resultado.results['lists'][8]['books'])
     setIsLoading(false)
-    //console.log(resultado.results['lists'][8])
   }, [])
 
   console.log(maisLidos)
@@ -75,7 +74,7 @@ export default function Home() {
             <FlatList
               showsHorizontalScrollIndicator={false}
               horizontal={true}
-              data={maisLidos['lists'][8]['books']}
+              data={maisLidos}
               keyExtractor={maisLidos => maisLidos.rank}
               renderItem={({ item }) => (
                 <CardBook
@@ -139,7 +138,7 @@ export default function Home() {
             <FlatList
               showsHorizontalScrollIndicator={false}
               horizontal={true}
-              data={maisLidos['lists'][8]['books']}
+              data={maisLidos}
               keyExtractor={maisLidos => maisLidos.rank}
               renderItem={({ item }) => (
                 <CardBook
